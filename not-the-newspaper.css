@@ -62,7 +62,7 @@ body {
 }
 
 .column.wide {
-    flex: 2 1 40%;             /* Middle column gets more space */
+    flex: 1 1 40%;             /* Middle column gets more space */
     border-left: 1px solid #000;
     border-right: 1px solid #000;
     padding: 0 15px;
