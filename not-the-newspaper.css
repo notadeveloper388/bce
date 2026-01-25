@@ -84,10 +84,12 @@ body {
     max-height: 450px;
     object-fit: contain;
 }
-
-.article {
-    break-inside: avoid;
-    margin-bottom: 10px;
+    
+.article img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    border: 1px solid #000;
 }
 
 .article h2 {
