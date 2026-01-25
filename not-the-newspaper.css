@@ -162,3 +162,47 @@ body {
         font-size: 1.15rem;
     }
 }
+/* Lock into 3 columns side-by-side on desktop/tablet (prevents early wrap) */
+@media (min-width: 1100px) {
+    .columns {
+        flex-wrap: nowrap;    /* No wrapping — forces all three to stay in one row */
+    }
+}
+
+/* When screen gets too small for 3 columns, allow natural wrap + stack */
+@media (max-width: 1099px) {
+    .columns {
+        flex-wrap: wrap;      /* Let them wrap naturally */
+    }
+    
+    .column.wide {
+        flex: 1 1 100%;       /* Wide column takes full width when wrapping */
+        order: 2;             /* Keeps wide in the middle visually */
+    }
+    
+    .column.narrow {
+        flex: 1 1 45%;        /* Side-by-side two columns if space allows */
+    }
+}
+
+/* Your existing mobile stacking (enhanced) */
+@media (max-width: 768px) {
+    .columns {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .column,
+    .column.wide,
+    .column.narrow {
+        flex: 1 1 100%;
+        padding: 0;
+        border-left: none;
+        border-right: none;
+    }
+    
+    .column:not(:first-child) {
+        border-top: 2px solid #000;
+        padding-top: 20px;
+    }
+}
